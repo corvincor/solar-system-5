@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Сонячна система - MindAR</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene mindar-image="imageTargetSrc: custom.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      
+      <a-assets>
+        <img id="sun-tex" src="sun.jpg">
+        <img id="mercury-tex" src="mercury.jpg">
+        <img id="venus-tex" src="venus.jpg">
+        <img id="earth-tex" src="holy_terra.jpg">
+        <img id="mars-tex" src="mars.jpg">
+        <img id="jupiter-tex" src="jupiter.jpg">
+        <img id="saturn-tex" src="saturn.jpg">
+        <img id="uranus-tex" src="uranus.jpg">
+        <img id="neptune-tex" src="neptune.jpg">
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-entity scale="0.05 0.05 0.05" rotation="90 0 0">
+          
+          <a-sphere src="#sun-tex" radius="2" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-sphere>
+
+          <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 4000"><a-sphere src="#mercury-tex" radius="0.2" position="3 0 0"></a-sphere></a-entity>
+          <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 7000"><a-sphere src="#venus-tex" radius="0.4" position="4.5 0 0"></a-sphere></a-entity>
+          <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"><a-sphere src="#earth-tex" radius="0.5" position="6 0 0"></a-sphere></a-entity>
+          <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 15000"><a-sphere src="#mars-tex" radius="0.3" position="7.5 0 0"></a-sphere></a-entity>
+          <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 30000"><a-sphere src="#jupiter-tex" radius="1.2" position="11 0 0"></a-sphere></a-entity>
+          <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 45000">
+            <a-sphere src="#saturn-tex" radius="0.9" position="15 0 0">
+              <a-ring color="#A69074" radius-inner="1.2" radius-outer="2" rotation="-70 0 0"></a-ring>
+            </a-sphere>
+          </a-entity>
+          <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 60000"><a-sphere src="#uranus-tex" radius="0.6" position="18 0 0"></a-sphere></a-entity>
+          <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 80000"><a-sphere src="#neptune-tex" radius="0.6" position="21 0 0"></a-sphere></a-entity>
+
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
